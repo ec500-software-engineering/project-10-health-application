@@ -28,9 +28,9 @@ public class MyClassifier {
     private float[] prepareFeatures(SensorData[] sData, final int sampleCount) {
         float[] input = new float[INPUT_SIZE];
         for(int i = 0; i < sampleCount; ++i){
-            input[3 * i] = sData[i].accelerate[0];
-            input[3 * i + 1] = sData[i].accelerate[1];
-            input[3 * i + 2] = sData[i].accelerate[2];
+            input[3 * i] = sData[i].worldAcc[0];
+            input[3 * i + 1] = sData[i].worldAcc[1];
+            input[3 * i + 2] = sData[i].worldAcc[2];
         }
         return input;
     }

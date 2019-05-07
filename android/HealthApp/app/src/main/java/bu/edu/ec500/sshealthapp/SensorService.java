@@ -116,6 +116,7 @@ public class SensorService extends Service implements SensorEventListener {
                     mRecognizer.dataSet[mRecognizer.dataSetIndex] = new SensorData();
                     mRecognizer.dataSet[mRecognizer.dataSetIndex].clone(latestSampledData);
                     mRecognizer.dataSet[mRecognizer.dataSetIndex].timestamp = System.currentTimeMillis();
+                    mRecognizer.dataSet[mRecognizer.dataSetIndex].calculateWorldAcc();
                     mRecognizer.dataSetIndex++;
                     if (mRecognizer.dataSetIndex == mRecognizer.getSamplingPointCount() / 2) {
                         mRecognizer.dataSetIndex = 0;
@@ -129,6 +130,7 @@ public class SensorService extends Service implements SensorEventListener {
                     mRecognizer.dataSet[halfIndex + mRecognizer.dataSetIndex] = new SensorData();
                     mRecognizer.dataSet[halfIndex + mRecognizer.dataSetIndex].clone(latestSampledData);
                     mRecognizer.dataSet[halfIndex + mRecognizer.dataSetIndex].timestamp = System.currentTimeMillis();
+                    mRecognizer.dataSet[halfIndex + mRecognizer.dataSetIndex].calculateWorldAcc();
                     if (mRecognizer.dataSetIndex == halfIndex - 1) {
                         try {
                             mRecognizer.recognitionHandler.post(new Runnable() {
@@ -186,6 +188,10 @@ public class SensorService extends Service implements SensorEventListener {
             updateSensorData(latestSampledData.accelerate, event);
         } else if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE) {
             updateSensorData(latestSampledData.gyroscope, event);
+        } else if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+            updateSensorData(latestSampledData.magnetic, event);
+        } else if (event.sensor.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR) {
+            updateSensorData(latestSampledData.gameRotation, event);
         }
     }
 

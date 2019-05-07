@@ -56,6 +56,7 @@ public class SensorRecognizeImpl {
         public void onServiceConnected(ComponentName name, IBinder service) {
             myBinder = (SensorService.MyBinder) service;
             MyClassifier myClassifier = new MyClassifier(ctx);
+            //XGBoostClassifier myClassifier = new XGBoostClassifier(ctx);
             HumanActivityRecognizer humanActivityRecognizer = new HumanActivityRecognizer(myClassifier, resultCallback);
             myBinder.setRecognizer(humanActivityRecognizer);
             initCallback.onSucceeded();

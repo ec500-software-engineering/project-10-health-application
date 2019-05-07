@@ -1,6 +1,7 @@
 package bu.edu.ec500.sshealthapp;
 
 import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.SparseIntArray;
@@ -87,6 +88,8 @@ public abstract class RecognizerAbstractClass {
     private void setDefaultSensors() {
         addSensorType(Sensor.TYPE_ACCELEROMETER);
         addSensorType(Sensor.TYPE_GYROSCOPE);
+        addSensorType(Sensor.TYPE_MAGNETIC_FIELD);
+        addSensorType(Sensor.TYPE_GAME_ROTATION_VECTOR);
     }
 
     public double[] recognize() {
