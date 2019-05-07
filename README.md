@@ -2,6 +2,10 @@
 
 In this project, we will build a health advisor based on patterns your phone knows about you. We will build an Android App and utilize the AI kernel model developed in [Kaggle](https://www.kaggle.com/morrisb/what-does-your-smartphone-know-about-you) to analyse your daily activities, then give you health advices.
 
+<img src="./images/running.gif" height="30%" width="30%">
+
+
+<img src="./images/goal.gif" height="30%" width="30%">
 
 ## System Design & Architecture
 <img src="./images/system_diagram.PNG">  
@@ -50,16 +54,16 @@ implement&test android application
 ## Final
 - UI Background thread and sensor thread initialized after opening the app.
 - Sensor start gathering data from accelerometer and gyroscope.
-- After data processing from AI model, the time value of performaning each activity will be passed to the UI and displayed in calories after computing calories & dist formula.
-<img src="./images/UI.1.png">
+- After data processing from AI model, the time value of performaning each activity will be passed to the UI and displayed in calories after computing calories & dist formula.  
+<img src="./images/UI.1.png" height="30%" width="30%">
 
-- Stop Sensor thread after pressing "NEW GOAL". 
-- Passing the new goal value from pop-out dialog to UI after clicking "ok". No value changes if "cancel".
-- The sensor thread will resume again after clicking "ok" or "cancel".
-<img src="./images/UI.2.png">
+- Stop Sensor thread after pressing "NEW GOAL".   
+- Passing the new goal value from pop-out dialog to UI after clicking "ok". No value changes if "cancel".  
+- The sensor thread will resume again after clicking "ok" or "cancel".  
+<img src="./images/UI.2.png" height="30%" width="30%">
 
-- Animated "GOAL" will explode after user reaches designated goal value.
-<img src="./images/UI.3.png">
+- Animated "GOAL" will explode after user reaches designated goal value.  
+<img src="./images/UI.3.png" height="30%" width="30%">
 
 ## Team Members
 * Leyang Shen
