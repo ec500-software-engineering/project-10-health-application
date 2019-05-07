@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements myDialog.myDialog
             R.id.standing,
             R.id.walkupstair,
             R.id.walkdownstair,
-            R.id.sitting,
-            R.id.laying };
+            R.id.laying,
+            R.id.sitting };
 
     private SensorRecognizeImpl mSensorRecogImpl;
 
